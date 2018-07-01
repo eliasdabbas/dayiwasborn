@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 """Tests for `dayiwasborn` package."""
 
@@ -7,7 +6,7 @@ import pytest
 
 from click.testing import CliRunner
 
-from dayiwasborn import dayiwasborn
+from dayiwasborn.dayiwasborn import dayiwasborn
 from dayiwasborn import cli
 
 
@@ -36,3 +35,11 @@ def test_command_line_interface():
     help_result = runner.invoke(cli.main, ['--help'])
     assert help_result.exit_code == 0
     assert '--help  Show this message and exit.' in help_result.output
+
+def test_correct_day_given():
+    july_1_2018 = dayiwasborn('name', 2018, 7, 1)
+    assert 'Sunday' in july_1_2018
+
+def test_correct_name_given():
+    result = dayiwasborn('John', 1900, 1, 1)
+    assert 'John' in result
