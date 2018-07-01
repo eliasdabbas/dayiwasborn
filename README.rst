@@ -21,6 +21,9 @@ dayiwasborn
 
 
 Tell us the date, and we'll tell you the weekday!
+You can even delete the package if you don't like the results. 
+Your satisfaction guaranteed, or your bytes back. Every. Single. One of them!
+
 
 
 * Free software: MIT license
